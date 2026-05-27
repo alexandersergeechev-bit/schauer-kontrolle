@@ -2,7 +2,7 @@
 const COST_PER_MINUTE = 0.13;
 
 // Ссылка на твою базу данных Firebase (ОБЯЗАТЕЛЬНО ЗАМЕНИ НА СВОЮ!)
-const FIREBASE_URL = "https://schauer-kontrolle-default-rtdb.europe-west1.firebasedatabase.app/";
+const FIREBASE_URL = "https://schauer-kontrolle-default-rtdb.europe-west1.firebasedatabase.app";
 
 const USER_NAMES = {
     Dad: "Папа Александр",
