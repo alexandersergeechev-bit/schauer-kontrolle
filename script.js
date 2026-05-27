@@ -5,8 +5,8 @@ const COST_PER_MINUTE = 0.13;
 const FIREBASE_URL = "https://schauer-kontrolle-default-rtdb.europe-west1.firebasedatabase.app";
 
 const USER_NAMES = {
-    Dad: "Папа Александр",
-    Mom: "Мама Ольга",
+    Dad: "Саша",
+    Mom: "Олечка",
     Veronika: "Вероника",
     Milana: "Милана"
 };
