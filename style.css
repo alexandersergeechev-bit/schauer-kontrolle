@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f4f8;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.app-container {
+    max-width: 500px;
+    width: 100%;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #1a365d;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #718096;
+    margin-bottom: 25px;
+}
+
+/* Сетка кнопок */
+.buttons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.user-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border-radius: 15px;
+    background: #f7fafc;
+    border: 2px solid #edf2f7;
+    transition: all 0.3s ease;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.btn-shower {
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.1s, filter 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-shower:active {
+    transform: scale(0.95);
+}
+
+/* Персональные цвета кнопок в режиме СТАРТ */
+.user-card[data-user="Dad"] .btn-shower { background: #3182ce; } /* Синий */
+.user-card[data-user="Mom"] .btn-shower { background: #319795; } /* Бирюзовый */
+.user-card[data-user="Veronika"] .btn-shower { background: #9f7aea; } /* Фиолетовый */
+.user-card[data-user="Milana"] .btn-shower { background: #ed64a6; } /* Розовый */
+
+/* Стиль, когда кнопка активна (идет душ) */
+.user-card.active {
+    border-color: #e53e3e;
+    background-color: #fff5f5;
+    animation: pulse 2s infinite;
+}
+
+.user-card.active .btn-shower {
+    background: #e53e3e !important;
+    animation: blink 1s infinite;
+}
+
+/* Сводная статистика за месяц */
+.summary-section {
+    background: #edf2f7;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.summary-section h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #2d3748;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.summary-item {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    border-left: 4px solid #ccc;
+}
+
+.summary-item.Dad { border-left-color: #3182ce; }
+.summary-item.Mom { border-left-color: #319795; }
+.summary-item.Veronika { border-left-color: #9f7aea; }
+.summary-item.Milana { border-left-color: #ed64a6; }
+
+.summary-item div {
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 2px;
+}
+
+/* Убеждающий элемент */
+.insight-box {
+    background: #feebc8;
+    border: 1px solid #fbd38d;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    font-size: 13px;
+    color: #744210;
+    line-height: 1.4;
+}
+
+/* История посещений */
+.history-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #2d3748;
+}
+
+.history-list {
+    max-height: 250px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    background: #f7fafc;
+    border-radius: 10px;
+    font-size: 13px;
+    border: 1px solid #e2e8f0;
+}
+
+.history-user {
+    font-weight: 600;
+}
+
+.history-user.Dad { color: #3182ce; }
+.history-user.Mom { color: #319795; }
+.history-user.Veronika { color: #9f7aea; }
+.history-user.Milana { color: #ed64a6; }
+
+.history-time {
+    color: #718096;
+    font-size: 11px;
+}
+
+.history-cost {
+    font-weight: bold;
+    color: #2d3748;
+}
+
+/* Анимации */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}

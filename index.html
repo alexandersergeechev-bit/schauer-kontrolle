@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Shower Control - Delmenhorst</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+    <h1>Учёт времени в душе 🚿</h1>
+    <div class="subtitle">Тариф: 1 минута = 13 центов (Общая сеть)</div>
+
+    <!-- Блок главных кнопок -->
+    <div class="buttons-grid">
+        <div class="user-card" id="card-Dad" data-user="Dad">
+            <div class="user-name">Саша</div>
+            <button class="btn-shower" id="btn-Dad" onclick="toggleShower('Dad')">СТАРТ</button>
+        </div>
+        
+        <div class="user-card" id="card-Mom" data-user="Mom">
+            <div class="user-name">Олечка</div>
+            <button class="btn-shower" id="btn-Mom" onclick="toggleShower('Mom')">СТАРТ</button>
+        </div>
+        
+        <div class="user-card" id="card-Veronika" data-user="Veronika">
+            <div class="user-name">Вероника</div>
+            <button class="btn-shower" id="btn-Veronika" onclick="toggleShower('Veronika')">СТАРТ</button>
+        </div>
+        
+        <div class="user-card" id="card-Milana" data-user="Milana">
+            <div class="user-name">Милана</div>
+            <button class="btn-shower" id="btn-Milana" onclick="toggleShower('Milana')">СТАРТ</button>
+        </div>
+    </div>
+
+    <!-- Убеждающий элемент -->
+    <div class="insight-box" id="insight-box">
+        <span id="insight-text">Синхронизация с облаком...</span>
+    </div>
+
+    <!-- Сводка за месяц -->
+    <div class="summary-section">
+        <h3>Сводный баланс за месяц:</h3>
+        <div class="summary-grid">
+            <div class="summary-item Dad">
+                Папа: <div id="sum-cash-Dad">0.00 €</div><span id="sum-min-Dad" style="font-size:11px; color:#718096">0 мин</span>
+            </div>
+            <div class="summary-item Mom">
+                Мама: <div id="sum-cash-Mom">0.00 €</div><span id="sum-min-Mom" style="font-size:11px; color:#718096">0 мин</span>
+            </div>
+            <div class="summary-item Veronika">
+                Вероника: <div id="sum-cash-Veronika">0.00 €</div><span id="sum-min-Veronika" style="font-size:11px; color:#718096">0 мин</span>
+            </div>
+            <div class="summary-item Milana">
+                Милана: <div id="sum-cash-Milana">0.00 €</div><span id="sum-min-Milana" style="font-size:11px; color:#718096">0 мин</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- История посещений -->
+    <div class="history-section">
+        <h3>Последние посещения:</h3>
+        <div class="history-list" id="history-list"></div>
+    </div>
+
+    <!-- Кнопка сброса -->
+    <div style="text-align: center; margin-top: 25px;">
+        <button onclick="clearAllStats()" style="background: none; border: none; color: #a0aec0; font-size: 11px; cursor: pointer; text-decoration: underline;">
+            Сбросить данные текущего месяца
+        </button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
